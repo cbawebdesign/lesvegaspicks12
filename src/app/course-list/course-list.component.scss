@@ -1,0 +1,55 @@
+@import 'https://use.fontawesome.com/releases/v5.5.0/css/all.css';
+.margin-tp
+{
+    margin-top: 8em;
+    margin-bottom: 2em
+}
+.a {
+    margin-left: 40%;
+    margin-right: 50%;
+}
+    
+.displayTable {
+    display: table;
+    width: 100%;
+    height: 100%;
+    background: #631313;
+  }
+  .project_container {
+
+    display: flex;
+    flex-wrap: wrap;
+    padding: 16pt 0;
+    max-width: 720pt;
+    margin: auto;
+
+    .card {
+
+        //margin: 75pt auto 0; // This was for the standalone projects page, but it can't be disabled on the home page through scss
+
+        //height: 400pt; // As long as the paragraph's size is the same, this shouldn't be necessary
+
+        .project_img {
+
+            margin: auto;
+            padding: 5pt;
+            height: 180pt;
+            display: flex; 
+            justify-content: center;
+
+        }
+
+        img {
+            max-height: 180pt;
+            max-width: 180pt;
+            margin: auto;
+        }
+
+    
+    .a {
+        margin-bottom: 25px;
+        background-color: grey;
+    }
+
+}
+}

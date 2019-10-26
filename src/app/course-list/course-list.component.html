@@ -1,0 +1,92 @@
+<div class="displayTable">
+
+  <div class="a">
+      <div class="row margin-tp">
+  
+  
+  
+    </div>
+    </div>
+  
+  
+  
+    <!--
+  <div class="a">
+  -->
+      <br>
+      <br>
+      <br>
+      <br>
+  
+      <h1>Your Picks</h1>
+  
+      <div class="portfolio-category-content">
+  
+  
+      <div class="project_container">
+  
+  
+        <div class="card hoverable">
+  <div class="card-start">
+  
+  
+  
+          <div class="card-content">
+  
+  <div class="project_img">
+    <div class="alert alert-info" role="alert" *ngFor="let mypick of mypicks">
+      <div class="p-2">
+  
+        <a href="{{ mypick.fields.url }}" target="_blank"><img src="{{ mypick.fields.courseImage.fields.file.url }}" class="rounded" width="196" /></a>
+      </div>
+      <div class="p-2">
+        <h5 class="alert-heading"><a href="{{ mypick.fields.url }}" target="_blank">{{ mypick.fields.title }}</a></h5>
+        <p><i>{{ mypick.fields.author }}</i></p>
+        <div [innerHTML]="mypick.fields.description | mdToHtml"></div>
+        <a href="{{ mypick.fields.url }}" target="_blank" class="btn btn-success">Go To My Picks</a>
+      </div>
+    </div>
+  </div>
+          </div>
+          </div>
+  
+          <br>
+  
+      </div>
+  
+  
+  <!---
+        <div class="card hoverable">
+  
+          <div class="card-start">
+  
+          -->
+            <div class="project_img">
+              <div class="alert alert-info" role="alert" *ngFor="let mypick of mypicks">
+                <div class="p-2">
+            
+                  <a href="{{ mypick.fields.url }}" target="_blank"><img src="{{ mypick.fields.courseImage.fields.file.url }}" class="rounded" width="196" /></a>
+                </div>
+                <div class="p-2">
+                  <h5 class="alert-heading"><a href="{{ mypick.fields.url }}" target="_blank">{{ mypick.fields.title }}</a></h5>
+                  <p><i>{{ mypick.fields.author }}</i></p>
+                  <div [innerHTML]="mypick.fields.description | mdToHtml"></div>
+                  <a href="{{ mypick.fields.url }}" target="_blank" class="btn btn-success">Go To My Picks</a>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+  
+          <br>
+  
+  
+        </div>
+  
+        </div>
+  <style>
+    h1{
+      text-align: center;
+      text-decoration:underline;
+    }
+  </style>

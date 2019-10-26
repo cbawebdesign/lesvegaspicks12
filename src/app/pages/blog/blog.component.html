@@ -1,0 +1,58 @@
+<section class="section bg-light pt-5" id="blog">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+              <h1 class="section-title text-center">News</h1>
+              <div class="section-title-border margin-t-20"></div>
+          </div>
+      </div>
+
+      <div class="row margin-t-30">
+
+
+      <div class="col-lg-4">
+        <div class="blog-box margin-t-30 hover-effect" *ngFor="let course of courses">
+          <img src="{{ course.fields.courseImage.fields.file.url }}" class="rounded" width="196" >
+            <div>
+                <h5 class="alert-heading"><a href="{{ course.fields.url }}" target="_blank">{{ course.fields.title }}</a></h5>
+                <p><i>{{ course.fields.author }}</i></p>
+                <div [innerHTML]="course.fields.description | mdToHtml"></div>
+                <a href="{{ course.fields.url }}" target="_blank" class="btn btn-success">Go To My Picks</a>
+                
+            </div>
+        </div>
+    </div>
+
+
+          <div class="col-lg-4">
+            <div class="blog-box margin-t-30 hover-effect" *ngFor="let course of courses">
+              <img src="{{ course.fields.courseImage.fields.file.url }}" class="rounded" width="196" >
+                <div>
+                    <h5 class="alert-heading"><a href="{{ course.fields.url }}" target="_blank">{{ course.fields.title }}</a></h5>
+                    <p><i>{{ course.fields.author }}</i></p>
+                    <div [innerHTML]="course.fields.description | mdToHtml"></div>
+                    <a href="{{ course.fields.url }}" target="_blank" class="btn btn-success">Go To My Picks</a>
+                    
+                </div>
+            </div>
+        </div>
+
+  
+
+            
+            
+    
+                <div class="col-lg-4">
+                    <div class="blog-box margin-t-30 hover-effect" *ngFor="let course of courses">
+                      <img src="{{ course.fields.courseImage.fields.file.url }}" class="rounded" width="196" >
+                        <div>
+                            <h5 class="alert-heading"><a href="{{ course.fields.url }}" target="_blank">{{ course.fields.title }}</a></h5>
+                            <p><i>{{ course.fields.author }}</i></p>
+                            <div [innerHTML]="course.fields.description | mdToHtml"></div>
+                            <a href="{{ course.fields.url }}" target="_blank" class="btn btn-success">Go To My Picks</a>
+                            
+                        </div>
+                    </div>
+                </div>
+      </div>
+</div>
