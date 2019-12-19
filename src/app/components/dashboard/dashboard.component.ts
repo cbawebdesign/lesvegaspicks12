@@ -12,7 +12,6 @@ import { Entry } from 'contentful';
 })
 export class DashboardComponent implements OnInit {
   
-  courses: Entry<any>[] = [];
 
   constructor(
     public authService: AuthService,
@@ -22,13 +21,9 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.contentfulService.getCourses()
-      .then(courses => this.courses = courses);
+ 
   }
 
-  goToCourseDetailsPage(courseId) {
-    this.router.navigate(['/course', courseId]);
-  }
 
   
 }

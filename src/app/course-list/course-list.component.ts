@@ -9,24 +9,17 @@ import { Entry } from 'contentful';
   styleUrls: ['./course-list.component.scss']
 })
 export class CourseListComponent implements OnInit {
-  
 
-  mypicks: Entry<any>[] = [];
-  courses: Entry<any>[] = [];
-  constructor(public router: Router, private contentfulService: ContentfulService) { }
 
   
 
   ngOnInit() {
-    this.contentfulService.getMypicks()
-      .then(mypicks => this.mypicks = mypicks);
+
   }
 
 
 
-  goToMypickDetailsPage(mypickId) {
-    this.router.navigate(['/mypick', mypickId]);
-  }
+
 
 
 }

@@ -38,12 +38,10 @@
     <div class="card hoverable">
               
       <div class="card-start">
-        <div class="blog-box margin-t-30 hover-effect" *ngFor="let mypick of mypicks">
+        <div class="blog-box margin-t-30 hover-effect" *ngIf="product">
 
-        <div class="project_img">
-          <img src="{{ mypick.fields.mypickImage.fields.file.url }}" class="rounded" width="196" >
-          
-        </div>
+          <p><i>{{ product.fields.productName }}</i></p>
+
         <div class="card-end">
           </div>
       </div>

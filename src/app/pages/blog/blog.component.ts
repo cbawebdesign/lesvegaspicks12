@@ -1,7 +1,8 @@
+import { switchMap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from 'src/app/contentful.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Entry } from 'contentful';
-import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-blog',
@@ -9,18 +10,32 @@ import { Router } from "@angular/router";
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-
-  courses: Entry<any>[] = [];
-
-
-  constructor(private router: Router, private contentfulService: ContentfulService) { }
+  product: Entry<any>;
+  categories: Entry<any>[];
+  productsForCategories: {} = {};
+  constructor(
+    private ContentfulService: ContentfulService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.contentfulService.getCourses()
-      .then(courses => this.courses = courses);
-  }
+    this.route.paramMap
+    .pipe(switchMap((params: ParamMap) => this.ContentfulService.getProduct(params.get('slug'))))
+    .subscribe(product => this.product = product);
+    this.ContentfulService.getCategories()
+    .then(categories => {
+      this.categories = categories;
 
-  goToCourseDetailsPage(courseId) {
-    this.router.navigate(['/course', courseId]);
+      return Promise.all(this.categories.map(
+        category => this.ContentfulService.getProducts({
+          'fields.categories.sys.id': category.sys.id
+        })
+      ))
+    })
+    .then(productListings => {
+      this.categories.forEach((cat, i) => {
+        this.productsForCategories[cat.sys.id] = productListings[i];
+      });
+    })
   }
 }
