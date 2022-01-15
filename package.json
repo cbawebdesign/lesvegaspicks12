@@ -34,7 +34,7 @@
     "firebase-functions": "^3.2.0",
     "forms-angular": "^0.12.0-beta.48",
     "install": "^0.13.0",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "ng-animate": "^0.3.4",
     "ng-simple-slideshow": "^1.2.9",
     "ngx-loading": "^3.0.1",
